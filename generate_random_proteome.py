@@ -261,13 +261,6 @@ def MakeGenBankFile(CDSfasta, simulation_type, num_iter, seed, p, num_mutations,
         filenote = "_initbioprops_"+species
     else:
         filenote = "_initequalprops"
-   # if codonclassbias == "True":
-   #     codbiasnote = "\tcodon classes 1, 2, and 3 were multiplied by the factors "+str(codontypefactor[0])+", "+str(codontypefactor[1])+", and "+str(codontypefactor[2])+", respectively"
-   #     codbiasname = "_codonclassbias"
-   # else:
-   #     codbiasnote = ""
-   #     codbiasname = ""
-
 
 
     #concatenate all DNA seqs and make it the chromosome sequence
@@ -433,41 +426,7 @@ if len(argv) < 4:
     print("arguments are: simulation_type ('mutate' or 'random'), species ('sc'), existing_fasta (fastafile to mutate), fileW (name of file to write to)")
 else:
     CallonFunctions(argv[1], species=argv[2], existing_fasta = argv[3], fileW = argv[4])
+
+#Examples:
 #CallonFunctions("mutate", species="sc", codonpropfile = "proj1/nt_cod_aa_proportions/genomewidecounts/Saccharomyces_cerevisiae_codon_count")
-#CallonFunctions("mutate", species="sc", existing_fasta = "/home/JosLaptop/randomfastafiles/increasingslippage/IncreasingSlippageSimulation.fasta.100000.10.0.358.initbioprops_sc_codonclassbias")
-#CallonFunctions("mutate", species="hs", existing_fasta = "/home/JosLaptop/randomfastafiles/increasingslippage/IncreasingSlippageSimulation.fasta.100000.10.0.238.initbioprops_hs_codonclassbias")
-#CallonFunctions("mutate", species="dm", existing_fasta = "/home/JosLaptop/randomfastafiles/increasingslippage/IncreasingSlippageSimulation.fasta.100000.10.0.319.initbioprops_dm_codonclassbias")
-#CallonFunctions("mutate", species="ce", existing_fasta = "/home/JosLaptop/randomfastafiles/increasingslippage/IncreasingSlippageSimulation.fasta.100000.10.0.31.initbioprops_ce_codonclassbias")
-#CallonFunctions("mutate", species="at", existing_fasta = "/home/JosLaptop/randomfastafiles/increasingslippage/IncreasingSlippageSimulation.fasta.100000.10.0.305.initbioprops_at_codonclassbias")
-#
-#CallonFunctions("mutate", species="sc", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/UnequalCodonSamplingSimulation.fasta.100000.10.0.236_initbioprops_sc_codonclassbias")
-#CallonFunctions("mutate", species="hs", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/UnequalCodonSamplingSimulation.fasta.100000.10.0.156_initbioprops_hs_codonclassbias")
-#CallonFunctions("mutate", species="dm", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/UnequalCodonSamplingSimulation.fasta.100000.10.0.214_initbioprops_dm_codonclassbias")
-#CallonFunctions("mutate", species="ce", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/UnequalCodonSamplingSimulation.fasta.100000.10.0.215_initbioprops_ce_codonclassbias")
-#CallonFunctions("mutate", species="at", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/UnequalCodonSamplingSimulation.fasta.100000.10.0.197_initbioprops_at_codonclassbias")
-#CallonFunctions("mutate", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/UnequalCodonSamplingSimulation.fasta.100000.10.0.236_initbioprops_sc_codonclassbias")
-
-
-#CallonFunctions("mutate", species="sc", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/thegoodones/UnequalCodonSamplingSimulation.fasta.100000.10.0.236_initbioprops_sc", fileW = "uneqsampinitbioprops_")
-#CallonFunctions("mutate", species="hs", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/thegoodones/UnequalCodonSamplingSimulation.fasta.100000.10.0.156_initbioprops_hs", fileW = "uneqsampinitbioprops_")
-#CallonFunctions("mutate", species="ce", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/thegoodones/UnequalCodonSamplingSimulation.fasta.100000.10.0.215_initbioprops_ce", fileW = "uneqsampinitbioprops_")
-#CallonFunctions("mutate", species="dm", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/thegoodones/UnequalCodonSamplingSimulation.fasta.100000.10.0.214_initbioprops_dm", fileW = "uneqsampinitbioprops_")
-#CallonFunctions("mutate", species="at", existing_fasta = "/home/JosLaptop/randomfastafiles/biased/thegoodones/UnequalCodonSamplingSimulation.fasta.100000.10.0.197_initbioprops_at", fileW = "uneqsampinitbioprops_")
-#
-#CallonFunctions("mutate", species="sc", existing_fasta = "/home/JosLaptop/randomfastafiles/increasingslippage/thegoodones/IncreasingSlippageSimulation.fasta.100000.10.0.358.initbioprops_sc", fileW = "incslipinitbioprops_")
-#CallonFunctions("mutate", species="hs", existing_fasta = "/home/JosLaptop/randomfastafiles/increasingslippage/thegoodones/IncreasingSlippageSimulation.fasta.100000.10.0.238.initbioprops_hs", fileW = "incslipinitbioprops_")
-#CallonFunctions("mutate", species="ce", existing_fasta = "/home/JosLaptop/randomfastafiles/increasingslippage/thegoodones/IncreasingSlippageSimulation.fasta.100000.10.0.31.initbioprops_ce", fileW = "incslipinitbioprops_")
-#CallonFunctions("mutate", species="dm", existing_fasta = "/home/JosLaptop/randomfastafiles/increasingslippage/thegoodones/IncreasingSlippageSimulation.fasta.100000.10.0.319.initbioprops_dm", fileW = "incslipinitbioprops_")
-#CallonFunctions("mutate", species="at", existing_fasta = "/home/JosLaptop/randomfastafiles/increasingslippage/thegoodones/IncreasingSlippageSimulation.fasta.100000.10.0.305.initbioprops_at", fileW = "incslipinitbioprops_")
-
-
-#CallonFunctions("mutate", species="sc", existing_fasta = "/home/JosLaptop/incslipsim_speciesspecific_improvedcodclassbias.100000.10.sc.fasta" , fileW = "/home/JosLaptop/improvedcodclass_initbioprops_")
-#CallonFunctions("mutate", species="hs", existing_fasta = "/home/JosLaptop/incslipsim_speciesspecific_improvedcodclassbias.100000.10.hs.fasta" , fileW = "/home/JosLaptop/improvedcodclass_initbioprops_")
-#CallonFunctions("mutate", species="dm", existing_fasta = "/home/JosLaptop/incslipsim_speciesspecific_improvedcodclassbias.100000.10.dm.fasta" , fileW = "/home/JosLaptop/improvedcodclass_initbioprops_")
-#CallonFunctions("mutate", species="ce", existing_fasta = "/home/JosLaptop/incslipsim_speciesspecific_improvedcodclassbias.100000.10.ce.fasta" , fileW = "/home/JosLaptop/improvedcodclass_initbioprops_")
-#CallonFunctions("mutate", species="at", existing_fasta = "/home/JosLaptop/incslipsim_speciesspecific_improvedcodclassbias.100000.10.at.fasta" , fileW = "/home/JosLaptop/improvedcodclass_initbioprops_")
-
-
-
-#CallonFunctions("biased", species=argv[1], codonpropfile=argv[2])
 #CallonFunctions("biased", species=argv[1], codonpropfile=argv[2])
