@@ -60,17 +60,17 @@ def changegeneralprops(fileR, start, end, percent):
 
     if len(freq) == 62:   #codonfile
         if start  > 61 or end > 61:
-            raise ValueError("must input start and end values less than 61")
+            raise ValueError("must input start and end values less than 62")
         ordered = subprocess.check_output(["ordercodons", fileR, "codon"])
         d = dcod  #for indexing the dictionary
     elif len(freq) == 21:  #aafile
         if start > 20 or end > 20:
-            raise ValueError("must input start and end values less than 20")
+            raise ValueError("must input start and end values less than 21")
         ordered = subprocess.check_output(["ordercodons", fileR, "aa"])
         d = daa  #for indexing the dictionary
     elif len(freq) == 5:  #ntfile
         if start > 4 or end > 4:
-            raise ValueError("must input start and end values less than 20")
+            raise ValueError("must input start and end values less than 5")
         ordered = subprocess.check_output(["ordercodons", fileR, "nt"])
         d = dnt  #for indexing the dictionary
     tfName = tempfile.NamedTemporaryFile(delete = False).name
