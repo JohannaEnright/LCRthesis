@@ -244,32 +244,3 @@ def executefunctions(ntcodpropfile=None, weight=None, seed=10, num_iterations=10
 ##COMMAND LINE STUFF##
 args = argv[1:]
 executefunctions(ntcodpropfile=args[0], seed=10, num_iterations=100000,organismname=args[1] )
-#if args[0] == "-h" or args == "--help":
-#    raise TypeError("put '-f' or '-s' (file=-f, string of weights=-s), 'nt_pro_cod_genomebias_filename'\
-#            OR string of weights 'a c g t' separated by a space, seed(d=10), number_of_sequences_generated(d=100 000), organism_name(d=test)(for file name)")
-#elif len(args) < 2:
-#    raise TypeError("must specify '-f'(filename) OR '-s'(string of weights), filename containing proportions OR string of nt/cod/aa weights in order")
-#if args[0] != "-f" and args[0] != "-s":
-#    raise ValueError("first argument must be a flag: '-f' or '-s'")
-#if len(args) > 2:
-#    seed = int(args[2])
-#else:
-#    seed = 10  #default
-#if len(args) > 3:
-#    num_iterations = int(args[3])
-#else:
-#    num_iterations = 100000  #default
-#if len(args) > 4:
-#    organismname = args[4]
-#else:
-#    organismname = "test"  #default
-#
-#if args[0]=="-f": #then a filename was provided
-#    executefunctions(ntcodpropfile=args[1], seed=seed, num_iterations=num_iterations, organismname=organismname)
-#elif args[0]=="-s": #then a string of weights was provided
-#    executefunctions(weight=args[1], seed=seed, num_iterations=num_iterations, organismname=organismname)
-
-#args[0] will eighter be file of nt/aa/codon proportions (specifically from 'nt_pro_cod_genomebias') output
-#or it will be a string of weights entered manually on command line "0.2 0.3 0.2 0.4" in between "" and separated 
-#by a space
-
